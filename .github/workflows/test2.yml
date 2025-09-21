@@ -1,0 +1,20 @@
+name: SSH Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Connect via SSH and run command
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: s801.sureserver.com
+          username: hash
+          key: asdqewdqwdeqwdfeqw
+          script: |
+            echo "Connected!"
+            uptime
