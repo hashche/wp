@@ -1,0 +1,7 @@
+uses: webfactory/ssh-agent@v0.9.0
+with:
+ssh-private-key: asdasdasdasdasda
+
+- name: Deploy to demo server
+run: |
+ssh hash@s801.sureserver.com "cd /home/hash/www/1 && bash -s" < ./scripts/deploy.sh
